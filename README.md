@@ -8,7 +8,7 @@ Joining the domain allows the client machine to authenticate domain users and re
 
 The system information shows the fully qualified domain name (FQDN) of the machine:
 
-CLIENT1.mydomain.com
+`CLIENT1.mydomain.com`
 
 This confirms that the client is properly integrated into the domain environment.
 
@@ -24,7 +24,7 @@ On the Domain Controller, user accounts are created and managed through **Active
 
 The client machine authenticates the domain user and receives network configuration automatically from the DHCP service running on the Domain Controller.
 
-The command prompt confirms:
+The command prompt confirms that:
 
 - The user is authenticated to the domain (`mydomain\abargo`)
 - The client received an IP address from DHCP
@@ -37,5 +37,3 @@ This verifies that:
 - The Domain Controller is routing traffic through NAT to the internet
 
 ![Domain Login and Connectivity Test](images/domain-login-test.png)
-## Network Diagram
-![Active Directory Lab Diagram](fd2q.png)
