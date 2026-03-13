@@ -67,4 +67,4 @@ The Windows 10 client connects to the **internal network** and communicates with
 ---
 
 ## Network Diagram
-
+![Active Directory Lab Diagram](fd2q.png)
