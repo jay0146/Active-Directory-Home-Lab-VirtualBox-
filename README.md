@@ -1,70 +1,41 @@
-# Active Directory Home Lab (VirtualBox)
+---
 
-## Overview
+## Client Joined to Active Directory Domain
 
-This project demonstrates the setup of a basic **Active Directory environment** using **Oracle VirtualBox**.  
-The lab simulates a small corporate network with a **Windows Server 2019 Domain Controller** and a **Windows 10 client machine** joined to the domain.
+The Windows 10 client machine was successfully joined to the **mydomain.com** Active Directory domain.
 
-The goal of this project was to better understand how enterprise environments manage:
+Joining the domain allows the client machine to authenticate domain users and receive services such as DNS and DHCP from the Domain Controller.
 
-- centralized authentication
-- user accounts
-- computer management
-- internal networking
+The system information shows the fully qualified domain name (FQDN) of the machine:
 
-This lab replicates a simplified version of a real office network.
+CLIENT1.mydomain.com
+
+This confirms that the client is properly integrated into the domain environment.
+
+![Client Joined to Domain](images/domain-join.png)
 
 ---
 
-## Technologies Used
+## Domain User Login and Network Connectivity
 
-- Windows Server 2019
-- Windows 10
-- Oracle VirtualBox
-- Active Directory Domain Services
-- DNS
-- DHCP
-- NAT / Routing
-- PowerShell
+This screenshot demonstrates a domain user account successfully logging into the Windows 10 client machine.
 
----
+On the Domain Controller, user accounts are created and managed through **Active Directory Users and Computers**.
 
-## Lab Architecture
+The client machine authenticates the domain user and receives network configuration automatically from the DHCP service running on the Domain Controller.
 
-The environment consists of two virtual machines.
+The command prompt confirms:
 
-### Domain Controller (DC)
+- The user is authenticated to the domain (`mydomain\abargo`)
+- The client received an IP address from DHCP
+- The machine has internet connectivity and can successfully ping external hosts
 
-- Windows Server 2019
-- Hosts **Active Directory Domain Services**
-- Manages user accounts and authentication
-- Runs **DNS and DHCP services**
-- Provides NAT routing for internal clients
-- Domain name: `mydomain.com`
+This verifies that:
 
-### Client Machine (Client1)
+- Active Directory authentication is working
+- DHCP is assigning network configuration automatically
+- The Domain Controller is routing traffic through NAT to the internet
 
-- Windows 10
-- Connected to the internal virtual network
-- Receives network configuration through DHCP
-- Joined to the Active Directory domain
-- Authenticates using domain user accounts
-
----
-
-## Network Configuration
-
-The Domain Controller uses **two network adapters**.
-
-Adapter 1  
-Connected to **NAT** in VirtualBox to provide internet access.
-
-Adapter 2  
-Connected to a **VirtualBox internal network** to simulate a private company network.
-
-The Windows 10 client connects to the **internal network** and communicates with the domain controller for authentication and network services.
-
----
-
+![Domain Login and Connectivity Test](images/domain-login-test.png)
 ## Network Diagram
 ![Active Directory Lab Diagram](fd2q.png)
