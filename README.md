@@ -80,4 +80,4 @@ The Domain Controller connects to the internet through a NAT adapter while also 
 The screenshot below shows a domain user successfully logged into the Windows 10 client machine.  
 The command prompt verifies that the user is authenticated to the domain and that the machine has internet connectivity.
 
-![Domain Authentication Test](vm.png)
+![Domain Authentication Test](vm.PNG)
