@@ -71,7 +71,7 @@ The Windows 10 client connects to the **internal network** and communicates with
 The diagram below shows the architecture of the lab environment.  
 The Domain Controller connects to the internet through a NAT adapter while also hosting an internal network for domain clients.
 
-![Network Diagram](fd2q.png)
+![Network Diagram](NetworkDiagram.png)
 
 ---
 
