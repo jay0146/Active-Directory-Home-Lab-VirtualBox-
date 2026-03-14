@@ -7,37 +7,37 @@ The lab simulates a small corporate network with a **Windows Server 2019 Domain 
 
 The goal of this project was to better understand how enterprise environments manage:
 
-- centralized authentication  
-- user accounts  
-- computer management  
-- internal networking  
+- centralized authentication
+- user accounts
+- computer management
+- internal networking
 
-This lab replicates a simplified version of a real corporate network.
+This lab replicates a simplified version of a real office network.
 
 ---
 
 ## Technologies Used
 
-- Windows Server 2019  
-- Windows 10  
-- Oracle VirtualBox  
-- Active Directory Domain Services (AD DS)  
-- DNS  
-- DHCP  
-- NAT / Routing  
-- PowerShell  
+- Windows Server 2019
+- Windows 10
+- Oracle VirtualBox
+- Active Directory Domain Services
+- DNS
+- DHCP
+- NAT / Routing
+- PowerShell
 
 ---
 
 ## Lab Architecture
 
-The environment consists of **two virtual machines**.
+The environment consists of two virtual machines.
 
 ### Domain Controller (DC)
 
-- Windows Server 2019  
+- Windows Server 2019
 - Hosts **Active Directory Domain Services**
-- Manages domain authentication and user accounts
+- Manages user accounts and authentication
 - Runs **DNS and DHCP services**
 - Provides NAT routing for internal clients
 - Domain name: `mydomain.com`
@@ -46,8 +46,8 @@ The environment consists of **two virtual machines**.
 
 - Windows 10
 - Connected to the internal virtual network
-- Receives network configuration automatically through DHCP
-- Joined to the **Active Directory domain**
+- Receives network configuration through DHCP
+- Joined to the Active Directory domain
 - Authenticates using domain user accounts
 
 ---
@@ -56,36 +56,28 @@ The environment consists of **two virtual machines**.
 
 The Domain Controller uses **two network adapters**.
 
-**Adapter 1 (External Network)**  
+Adapter 1  
 Connected to **NAT** in VirtualBox to provide internet access.
 
-**Adapter 2 (Internal Network)**  
+Adapter 2  
 Connected to a **VirtualBox internal network** to simulate a private company network.
 
-The Windows 10 client connects to the **internal network** and communicates with the Domain Controller for authentication, DNS resolution, and DHCP configuration.
+The Windows 10 client connects to the **internal network** and communicates with the domain controller for authentication and network services.
 
 ---
 
-## Client Joined to Domain
+## Network Diagram
 
-The Windows 10 client machine was successfully joined to the **mydomain.com Active Directory domain**.
+The diagram below shows the architecture of the lab environment.  
+The Domain Controller connects to the internet through a NAT adapter while also hosting an internal network for domain clients.
 
-The system information shows the fully qualified domain name (FQDN):
-
-`CLIENT1.mydomain.com`
-
-This confirms the machine is properly integrated into the domain environment and can authenticate domain users.
-
-![Client Joined to Domain](client%201%20domain.PNG)
+![Network Diagram](network-diagram.png)
 
 ---
 
-## Skills Demonstrated
+## Domain Authentication and Connectivity Test
 
-- Active Directory Domain Services deployment
-- Domain user and computer management
-- Windows domain client configuration
-- DHCP network configuration
-- DNS integration with Active Directory
-- Virtual network configuration using VirtualBox
-- Basic enterprise network architecture concepts
+The screenshot below shows a domain user successfully logged into the Windows 10 client machine.  
+The command prompt verifies that the user is authenticated to the domain and that the machine has internet connectivity.
+
+![Domain Authentication Test](domain-login-test.png)
