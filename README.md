@@ -71,7 +71,7 @@ The Windows 10 client connects to the **internal network** and communicates with
 The diagram below shows the architecture of the lab environment.  
 The Domain Controller connects to the internet through a NAT adapter while also hosting an internal network for domain clients.
 
-![Network Diagram](network-diagram.png)
+![Network Diagram](client 1 domain.png)
 
 ---
 
@@ -80,4 +80,4 @@ The Domain Controller connects to the internet through a NAT adapter while also 
 The screenshot below shows a domain user successfully logged into the Windows 10 client machine.  
 The command prompt verifies that the user is authenticated to the domain and that the machine has internet connectivity.
 
-![Domain Authentication Test](domain-login-test.png)
+![Domain Authentication Test](vm.png)
